@@ -372,7 +372,7 @@ f64 fabs(f64 f);
 u8 GetRandomByte(void);
 void func_80017660(u8, f32, f32, f32, f32);
 void func_800176C4(u8, f32, f32, f32, f32, f32, f32);
-void func_800178A0(s32);
+void func_800178A0(u8);
 s16 func_800178E8(void);
 void func_8001D494(s16, f32, f32, f32);
 void func_8001DE70(s32);

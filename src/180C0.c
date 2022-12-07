@@ -14,7 +14,7 @@ s16 func_8001755C(s32 arg0) {
 }
 
 u8 GetRandomByte(void) {
-    D_800C2FF4 = D_800C2FF4 * 0x41C64E6D + 0x3039;
+    D_800C2FF4 = D_800C2FF4 * 0x41C64E6D + 12345;
     return (D_800C2FF4 + 1) >> 16;
 }
 
@@ -42,9 +42,9 @@ s16 func_80017850(s32 arg0, s32 arg1, char* arg2) {
     return func_80038A9C(arg0, ReadMainFS(arg1), 0, arg2);
 }
 
-void func_800178A0(s32 arg0) {
-    D_800C3000 = (u8) arg0;
-    InitCameras((s32) D_800C3000);
+void func_800178A0(u8 arg0) {
+    D_800C3000 = arg0;
+    InitCameras(D_800C3000);
     D_800C3110->unk_40 = 45.0f;
     D_800C3001 = 0;
 }
@@ -54,7 +54,7 @@ s16 func_800178E8(void) {
 
     temp_s0 = D_800C3001;
     func_8001D8A0(D_800C3001, &func_8002A0E4, &D_800EE738);
-    D_800C3001 += 1;
+    D_800C3001++;
     return temp_s0;
 }
 

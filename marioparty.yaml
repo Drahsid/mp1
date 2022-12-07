@@ -7,7 +7,7 @@ options:
   compiler: GCC
   find_file_boundaries: True
   header_encoding: ASCII
-  # platform: n64
+  platform: n64
   symbol_name_format: $VRAM_$ROM
   undefined_funcs_auto_path: undefined_funcs_auto.txt
   undefined_syms_auto_path: undefined_syms_auto.txt
@@ -21,7 +21,9 @@ options:
   src_path: src
   build_path: build
   # extensions_path: tools/splat_ext
-  # auto_all_sections: True
+  # auto_all_sections: []
+  # migrate_rodata_to_functions: False
+  migrate_rodata_to_functions: True
   asm_inc_header: "\t.set noat\n\t.set noreorder\n"
 segments:
   - name: header
@@ -931,8 +933,8 @@ segments:
     exclusive_ram_id: minigame
     subsegments:
       - [0x2592A0, c]
-      - [0x259DD0, data] #800F7110
-      - [0x259E90, rodata]
+    #  - [0x259DD0, .data] #800F7110
+    #  - [0x259E90, .rodata]
   - type: code
     start: 0x259EB0
     vram: 0x800F65E0
